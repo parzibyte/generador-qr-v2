@@ -9,24 +9,56 @@
 </head>
 
 <body>
-  <input type="color" id="colorFondo" value="#ffffff">
-  <input type="color" id="colorFrente" value="#000000">
-  <textarea placeholder="Contenido del código" name="contenido" id="contenido"></textarea>
-  <select name="nivelRecuperacion" id="nivelRecuperacion">
-    <option value="L">Baja</option>
-    <option value="M">Media</option>
-    <option value="Q">Alta</option>
-    <option value="H">Máxima</option>
-  </select>
-  <input id="tamaño" type="number" placeholder="Tamaño" value="100">
-  <canvas id="canvas"></canvas>
-  <select name="formatoSalida" id="formatoSalida">
-    <option value="image/png">PNG</option>
-    <option value="image/jpeg">JPG</option>
-    <option value="image/webp">WEBP</option>
-    <option value="image/avif">AVIF</option>
-  </select>
-  <button id="descargar">Descargar</button>
+  <div class="flex flex-col gap-4 p-4 max-w-md mx-auto">
+    <h2 class="text-2xl">Generador QR rápido</h2>
+    <div class="flex flex-col md:flex-row justify-between">
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <span class="text-sm">Color de fondo:</span>
+        <input type="color" id="colorFondo" value="#ffffff" class="h-8 w-8  rounded" />
+      </label>
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <span class="text-sm">Color del frente:</span>
+        <input type="color" id="colorFrente" value="#000000" class="h-8 w-8 rounded" />
+      </label>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between">
+      <label class="flex flex-col text-sm">
+        Nivel de recuperación:
+        <select id="nivelRecuperacion" name="nivelRecuperacion" class="border rounded p-2">
+          <option value="L">Baja</option>
+          <option value="M">Media</option>
+          <option value="Q">Alta</option>
+          <option selected value="H">Máxima</option>
+        </select>
+      </label>
+      <label class="flex flex-col text-sm">
+        Tamaño en pixeles:
+        <input id="tamaño" type="number" placeholder="Tamaño" value="500" class="border rounded p-2" />
+      </label>
+    </div>
+    <textarea id="contenido" name="contenido" placeholder="Contenido del código"
+      class="border rounded p-2 resize-none h-32"></textarea>
+    <div class="justify-center flex overflow-auto max-h-64 max-w-64 flex-col">
+      <canvas id="canvas" class="rounded max-w-max max-h-max"></canvas>
+    </div>
+
+    <label class="flex flex-col text-sm">
+      Formato de salida:
+      <select id="formatoSalida" name="formatoSalida" class="border rounded p-2">
+        <option value="image/png">PNG</option>
+        <option value="image/jpeg">JPG</option>
+        <option value="image/webp">WEBP</option>
+        <option value="image/avif">AVIF</option>
+      </select>
+    </label>
+
+    <button id="descargar" class="bg-blue-600 text-white rounded p-2 hover:bg-blue-700 transition-colors">
+      Descargar
+    </button>
+  </div>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
