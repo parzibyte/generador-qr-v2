@@ -21,9 +21,9 @@ const refrescarQr = () => {
     size: $tamaño.valueAsNumber,
   });
 }
-refrescarQr();
 [$contenido, $colorFondo, $colorFrente, $nivelRecuperacion, $tamaño].forEach(elemento => elemento.oninput = refrescarQr);
-
+refrescarQr();
+$contenido.focus();
 $descargar.onclick = () => {
   const formato = $formatoSalida.value;
   let extension = "";
