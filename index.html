@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de códigos QR</title>
+</head>
+
+<body>
+  <input type="color" id="colorFondo" value="#ffffff">
+  <input type="color" id="colorFrente" value="#000000">
+  <textarea placeholder="Contenido del código" name="contenido" id="contenido"></textarea>
+  <select name="nivelRecuperacion" id="nivelRecuperacion">
+    <option value="L">Baja</option>
+    <option value="M">Media</option>
+    <option value="Q">Alta</option>
+    <option value="H">Máxima</option>
+  </select>
+  <input id="tamaño" type="number" placeholder="Tamaño" value="100">
+  <canvas id="canvas"></canvas>
+  <select name="formatoSalida" id="formatoSalida">
+    <option value="image/png">PNG</option>
+    <option value="image/jpeg">JPG</option>
+    <option value="image/webp">WEBP</option>
+    <option value="image/avif">AVIF</option>
+  </select>
+  <button id="descargar">Descargar</button>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
